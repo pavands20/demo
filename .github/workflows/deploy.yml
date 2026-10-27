@@ -45,8 +45,8 @@ concurrency:
 
 env:
   AWS_REGION: us-west-2
-  IMAGE: 017183879633.dkr.ecr.us-west-2.amazonaws.com/aisdlc-e6412326af7c
-  AMPLIFY_APP: d23m9gkl7erfkc
+  IMAGE: 030157669144.dkr.ecr.us-west-2.amazonaws.com/aisdlc-e6412326af7c
+  AMPLIFY_APP: d3j61xaup4zgrx
   # A pull request deploys to the preview branch; a push to main deploys the real one.
   BRANCH: ${{ github.event_name == 'pull_request' && 'pe6412326af7c-pr' || 'pe6412326af7c' }}
   # false for a frontend-only project: there is no backend/ to build and no image to push.
@@ -60,7 +60,7 @@ jobs:
 
       - uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::017183879633:role/aisdlc-e6412326af7c-github
+          role-to-assume: arn:aws:iam::030157669144:role/aisdlc-e6412326af7c-github
           aws-region: us-west-2
 
       - uses: aws-actions/amazon-ecr-login@v2
@@ -87,7 +87,7 @@ jobs:
           # address on the platform's own host, known ahead of time -- not discovered here
           # the way an AWS-assigned hostname would have to be. The variable name is the
           # frontend's own, because a bundler inlines only its own prefix.
-          VITE_API_BASE_URL: https://52-32-239-66.sslip.io/apps/e6412326af7c/
+          VITE_API_BASE_URL: https://35-165-249-160.sslip.io/apps/e6412326af7c/
           NEXT_PUBLIC_API_SECRET_KEY: "e6412326-af7c-4bce-81b2-011c01c5cbca"
           VITE_API_SECRET_KEY: "e6412326-af7c-4bce-81b2-011c01c5cbca"
 
@@ -110,4 +110,4 @@ jobs:
             --job-id "$JOB" >/dev/null
 
           echo "Frontend: https://${BRANCH}.${AMPLIFY_APP}.amplifyapp.com"
-          echo "API:      https://52-32-239-66.sslip.io/apps/e6412326af7c/"
+          echo "API:      https://35-165-249-160.sslip.io/apps/e6412326af7c/"
