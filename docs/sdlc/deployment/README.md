@@ -3,16 +3,18 @@
 > Maintained by QuorQ AI SDLC. Text between `sdlc:auto` markers is regenerated; anything outside them is yours and is kept.
 
 <!-- sdlc:auto:start narrative -->
-### DEPLOY-c52fe36f29f3 · approved · source: deployment:c52fe36f29f3
+### DEPLOY-e83479197237 · draft · source: deployment:e83479197237
 
-The 'demo' RAG chat application (login page, Postgres-backed chat) is live in production under version c52fe36f29f3. Frontend and backend endpoints are both reachable.
+_2026-10-27_
 
-Deployment record states: Status = live, Version = c52fe36f29f3, Frontend URL = https://pe6412326af7c.d23m9gkl7erfkc.amplifyapp.com, Backend URL = https://52-32-239-66.sslip.io/apps/e6412326af7c/. No further detail (deployment date/time, who triggered or approved it, release notes, which requirements/tickets are included in this version, rollback plan, or target environment name) was supplied in the input.
+Deployment of version e83479197237 failed. The backend container could not start because storing the project's environment variables in AWS failed with a TooManyUpdates error from the PutParameter API.
 
-- ⚠ No deployment date/timestamp recorded.
-- ⚠ No approver or deployer identity recorded.
-- ⚠ No mapping provided linking this deployed version to specific requirements (US-001..US-011) or dev tickets -- cannot confirm what functionality this version includes.
-- ⚠ No rollback or incident plan documented.
-- ⚠ No environment name (e.g. staging vs. production) confirmed beyond the generic 'live' status.
-- ⚠ No infrastructure/config details (e.g. Postgres instance, hosting provider specifics) beyond the two URLs.
+Deployment status: failed. Version: e83479197237. Frontend URL provisioned: https://pe6412326af7c.d3j61xaup4zgrx.amplifyapp.com. Backend URL provisioned: https://35-165-249-160.sslip.io/apps/e6412326af7c/. Failure reason as reported: 'The container could not be started: Could not store the project's variables in the client's AWS account: An error occurred (TooManyUpdates) when calling the PutParameter operation'. This indicates the deployment pipeline attempted to write configuration/secrets to AWS Systems Manager Parameter Store and was throttled (TooManyUpdates is an AWS API rate-limit error on PutParameter), preventing the container from receiving its environment variables and starting. No further detail was provided on retry behavior, which specific variables were being written, or whether any partial state was left in AWS. No approver or deployer is named in the input.
+
+- ⚠ No information on which requirements/features (US-001..US-011) this deployment was intended to ship -- cannot link related_ids without fabricating.
+- ⚠ Root cause is only an API error string; no confirmation of why PutParameter was called excessively (e.g. rapid retries, missing rate-limiting/backoff logic) -- needs investigation by the deployment/infra owner.
+- ⚠ No record of a remediation plan or retry attempt after this failure.
+- ⚠ No rollback or cleanup status for partially-created AWS resources from this failed attempt.
+- ⚠ Frontend and backend URLs were allocated despite failure -- unclear if frontend is serving a broken app or is inaccessible; not stated in input.
+- ⚠ No deployer/approver identity or timestamp beyond version id was given.
 <!-- sdlc:auto:end narrative -->

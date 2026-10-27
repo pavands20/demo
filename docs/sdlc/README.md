@@ -5,7 +5,7 @@
 <!-- sdlc:auto:start overview -->
 A simple rag chat project with login page and Postgres database
 
-**Documentation version:** v4
+**Documentation version:** v5
 <!-- sdlc:auto:end overview -->
 
 ## Contents
@@ -29,9 +29,9 @@ A simple rag chat project with login page and Postgres database
 | [Tests](testing/test-cases.md) | 0 tests |
 | [Deployment guide](deployment/deployment-guide.md) | deployed |
 | [Runbook](deployment/runbook.md) | deployed |
-| [Release notes](deployment/release-notes.md) | 1 release |
+| [Release notes](deployment/release-notes.md) | 2 releases |
 | [Traceability matrix](traceability-matrix.md) | 11 requirements |
-| [Changelog](CHANGELOG.md) | 4 versions |
+| [Changelog](CHANGELOG.md) | 5 versions |
 <!-- sdlc:auto:end contents -->
 
 ## Open gaps
@@ -77,12 +77,12 @@ A simple rag chat project with login page and Postgres database
 
 ### Deployment
 
-- No deployment date/timestamp recorded.
-- No approver or deployer identity recorded.
-- No mapping provided linking this deployed version to specific requirements (US-001..US-011) or dev tickets -- cannot confirm what functionality this version includes.
-- No rollback or incident plan documented.
-- No environment name (e.g. staging vs. production) confirmed beyond the generic 'live' status.
-- No infrastructure/config details (e.g. Postgres instance, hosting provider specifics) beyond the two URLs.
+- No information on which requirements/features (US-001..US-011) this deployment was intended to ship -- cannot link related_ids without fabricating.
+- Root cause is only an API error string; no confirmation of why PutParameter was called excessively (e.g. rapid retries, missing rate-limiting/backoff logic) -- needs investigation by the deployment/infra owner.
+- No record of a remediation plan or retry attempt after this failure.
+- No rollback or cleanup status for partially-created AWS resources from this failed attempt.
+- Frontend and backend URLs were allocated despite failure -- unclear if frontend is serving a broken app or is inaccessible; not stated in input.
+- No deployer/approver identity or timestamp beyond version id was given.
 
 ### Maintenance
 
