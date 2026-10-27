@@ -5,7 +5,7 @@
 <!-- sdlc:auto:start overview -->
 A simple rag chat project with login page and Postgres database
 
-**Documentation version:** v5
+**Documentation version:** v6
 <!-- sdlc:auto:end overview -->
 
 ## Contents
@@ -31,7 +31,7 @@ A simple rag chat project with login page and Postgres database
 | [Runbook](deployment/runbook.md) | deployed |
 | [Release notes](deployment/release-notes.md) | 2 releases |
 | [Traceability matrix](traceability-matrix.md) | 11 requirements |
-| [Changelog](CHANGELOG.md) | 5 versions |
+| [Changelog](CHANGELOG.md) | 6 versions |
 <!-- sdlc:auto:end contents -->
 
 ## Open gaps
@@ -77,12 +77,11 @@ A simple rag chat project with login page and Postgres database
 
 ### Deployment
 
-- No information on which requirements/features (US-001..US-011) this deployment was intended to ship -- cannot link related_ids without fabricating.
-- Root cause is only an API error string; no confirmation of why PutParameter was called excessively (e.g. rapid retries, missing rate-limiting/backoff logic) -- needs investigation by the deployment/infra owner.
-- No record of a remediation plan or retry attempt after this failure.
-- No rollback or cleanup status for partially-created AWS resources from this failed attempt.
-- Frontend and backend URLs were allocated despite failure -- unclear if frontend is serving a broken app or is inaccessible; not stated in input.
-- No deployer/approver identity or timestamp beyond version id was given.
+- No deployment date recorded.
+- No indication of who approved or executed this deployment.
+- No mapping provided from this deployment to specific requirement IDs (US-001..US-011) or development tickets, so it is unclear which features/fixes are included in this release.
+- No rollback plan, infrastructure/environment details, or release notes provided.
+- No confirmation of database (Postgres) migration status or connectivity for this deployment.
 
 ### Maintenance
 
