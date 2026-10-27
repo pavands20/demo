@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --brand-primary: #2563eb;
-  --brand-accent: #7c3aed;
-  --brand-neutral: #64748b;
-  --brand-radius: 0.5rem;
-  --brand-font-heading: system-ui, sans-serif;
-  --brand-font-body: system-ui, sans-serif;
-  --brand-surface: #ffffff;
-  --brand-border: #e2e8f0;
-  --brand-fg: #0f172a;
-  --brand-fg-muted: #64748b;
-  --brand-hover: #f1f5f9;
-  --brand-background: #ffffff;
+  --brand-primary: #ff2d95;
+  --brand-accent: #ffb020;
+  --brand-neutral: #c7a2b4;
+  --brand-radius: 0.375rem;
+  --brand-font-heading: IBM Plex Sans SemiBold;
+  --brand-font-body: IBM Plex Sans with IBM Plex Mono for IDs and citations;
+  --brand-surface: rgba(255,255,255,0.04);
+  --brand-border: rgba(255,255,255,0.10);
+  --brand-fg: #e2e8f0;
+  --brand-fg-muted: rgba(226,232,240,0.65);
+  --brand-hover: rgba(255,255,255,0.06);
+  --brand-background: #1a0612;
 }
 
 body {
