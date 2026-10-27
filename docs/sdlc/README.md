@@ -5,7 +5,7 @@
 <!-- sdlc:auto:start overview -->
 A simple rag chat project with login page and Postgres database
 
-**Documentation version:** v3
+**Documentation version:** v4
 <!-- sdlc:auto:end overview -->
 
 ## Contents
@@ -27,11 +27,11 @@ A simple rag chat project with login page and Postgres database
 | [API reference](development/api-reference.md) | 1 route |
 | [Test report](testing/test-report.md) | not run yet |
 | [Tests](testing/test-cases.md) | 0 tests |
-| [Deployment guide](deployment/deployment-guide.md) | not deployed yet |
-| [Runbook](deployment/runbook.md) | not deployed yet |
-| [Release notes](deployment/release-notes.md) | 0 releases |
+| [Deployment guide](deployment/deployment-guide.md) | deployed |
+| [Runbook](deployment/runbook.md) | deployed |
+| [Release notes](deployment/release-notes.md) | 1 release |
 | [Traceability matrix](traceability-matrix.md) | 11 requirements |
-| [Changelog](CHANGELOG.md) | 3 versions |
+| [Changelog](CHANGELOG.md) | 4 versions |
 <!-- sdlc:auto:end contents -->
 
 ## Open gaps
@@ -77,7 +77,12 @@ A simple rag chat project with login page and Postgres database
 
 ### Deployment
 
-- No evidence the approved AWS stack (RDS/Postgres+pgvector, S3, FastAPI backend, React frontend) has been provisioned or deployed anywhere.
+- No deployment date/timestamp recorded.
+- No approver or deployer identity recorded.
+- No mapping provided linking this deployed version to specific requirements (US-001..US-011) or dev tickets -- cannot confirm what functionality this version includes.
+- No rollback or incident plan documented.
+- No environment name (e.g. staging vs. production) confirmed beyond the generic 'live' status.
+- No infrastructure/config details (e.g. Postgres instance, hosting provider specifics) beyond the two URLs.
 
 ### Maintenance
 
